@@ -1,8 +1,11 @@
 // src/api/axiosClient.js
 import axios from "axios";
 
-const API_BASE =
+// 👇 Backend base URL INCLUDING "/api"
+const API_BASE_URL =
     import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+
+console.log("API Base URL:", API_BASE_URL);
 
 const axiosClient = axios.create({
     baseURL: API_BASE_URL,
@@ -11,7 +14,7 @@ const axiosClient = axios.create({
 // 🔐 Attach token from localStorage on every request
 axiosClient.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("sr_access"); // 👈 same as AuthContext
+        const token = localStorage.getItem("sr_access");
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -20,7 +23,7 @@ axiosClient.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// ♻ Auto-refresh expired access token
+// ♻ Auto-refresh expired token
 axiosClient.interceptors.response.use(
     (response) => response,
     async (error) => {
@@ -30,9 +33,7 @@ axiosClient.interceptors.response.use(
             originalRequest._retry = true;
 
             const refreshToken = localStorage.getItem("sr_refresh");
-            if (!refreshToken) {
-                return Promise.reject(error);
-            }
+            if (!refreshToken) return Promise.reject(error);
 
             try {
                 const res = await axios.post(
@@ -42,14 +43,11 @@ axiosClient.interceptors.response.use(
 
                 const newAccessToken = res.data.accessToken;
 
-                // save new accessToken
                 localStorage.setItem("sr_access", newAccessToken);
 
-                // update axios header
                 axiosClient.defaults.headers.common["Authorization"] =
                     `Bearer ${newAccessToken}`;
 
-                // retry original request
                 originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
 
                 return axiosClient(originalRequest);
@@ -58,7 +56,6 @@ axiosClient.interceptors.response.use(
             }
         }
 
-        console.error("API error:", error?.response || error);
         return Promise.reject(error);
     }
 );
