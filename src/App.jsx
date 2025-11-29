@@ -47,8 +47,8 @@ const App = () => {
                 <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="/admin/sos" element={<AdminSosPage />} />
                 <Route path="/admin/risk-zones" element={<AdminRiskZonesPage />} />
-<Route path="/admin/feedback" element={<AdminFeedbackHeatmapPage />} />
-<Route path="/admin/settings" element={<AdminSettingsPage />} />
+                <Route path="/admin/feedback" element={<AdminFeedbackHeatmapPage />} />
+                <Route path="/admin/settings" element={<AdminSettingsPage />} />
             </Routes>
         </>
     );
