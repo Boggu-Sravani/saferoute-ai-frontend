@@ -1,0 +1,52 @@
+.sr-denied {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #020617, #000);
+    color: #e5e7eb;
+    padding: 1.5rem;
+}
+
+.sr-denied-card {
+    max-width: 420px;
+    background: #020617;
+    border-radius: 1rem;
+    border: 1px solid rgba(63, 63, 70, 0.9);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.sr-denied-card h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.sr-denied-card p {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.sr-denied-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sr-denied-btn {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    border: none;
+    background: linear-gradient(to right, #38bdf8, #6366f1);
+    color: #f9fafb;
+    font-size: 0.86rem;
+}
+
+.sr-denied-link {
+    font-size: 0.8rem;
+    color: #38bdf8;
+    text-decoration: none;
+}

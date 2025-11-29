@@ -1,0 +1,77 @@
+.sr-sos-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.sr-sos-modal {
+    background: #1f2937;
+    padding: 2rem;
+    width: 340px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: popIn 0.18s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.sr-sos-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.sr-sos-title {
+    color: #f87171;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.sr-sos-text {
+    color: #d1d5db;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.sr-sos-list {
+    text-align: left;
+    margin: 0 auto;
+    color: #e5e7eb;
+    font-size: 0.85rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.3rem;
+}
+
+.sr-sos-list li {
+    margin: 4px 0;
+}
+
+.sr-sos-btn {
+    background: #ef4444;
+    color: white;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

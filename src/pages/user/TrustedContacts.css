@@ -1,0 +1,317 @@
+/* PAGE WRAPPER */
+.sr-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1.75rem 1rem 2.25rem;
+}
+
+/* HEADER */
+.sr-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.sr-page-header h1 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.sr-page-header p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    max-width: 520px;
+}
+
+/* GRID LAYOUT */
+.sr-page-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+    gap: 1.4rem;
+    margin-top: 1.4rem;
+}
+
+/* CARDS (re-using sr-card look but a bit more polished here) */
+.sr-card {
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+        rgba(15, 23, 42, 0.9);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+    padding: 1.25rem 1.35rem;
+    backdrop-filter: blur(18px);
+}
+
+.sr-contacts-form-card h2,
+.sr-contacts-list-card h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+}
+
+/* FORM */
+.sr-contacts-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+.sr-auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.sr-auth-field label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #e5e7eb;
+}
+
+.sr-auth-field input {
+    border-radius: 0.55rem;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    background: rgba(15, 23, 42, 0.9);
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    color: #e5e7eb;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.sr-auth-field input::placeholder {
+    color: #6b7280;
+}
+
+.sr-auth-field input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+    background: rgba(15, 23, 42, 1);
+}
+
+/* CHECKBOX */
+.sr-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    color: #d1d5db;
+    cursor: pointer;
+    margin-top: 0.35rem;
+}
+
+.sr-checkbox input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    background: transparent;
+    accent-color: #38bdf8;
+}
+
+/* BUTTONS */
+.sr-auth-submit {
+    margin-top: 0.3rem;
+    border-radius: 999px;
+    border: none;
+    padding: 0.55rem 0.95rem;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+    transition: transform 0.12s ease, box-shadow 0.12s ease,
+        filter 0.12s ease;
+}
+
+.sr-auth-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 35px rgba(37, 99, 235, 0.55);
+    filter: brightness(1.05);
+}
+
+.sr-auth-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.9);
+}
+
+/* LIST / RIGHT CARD */
+.sr-contacts-list-card {
+    position: relative;
+}
+
+.sr-contacts-list-card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sr-contacts-list-card h2::after {
+    content: "Live SOS contacts";
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+/* muted text */
+.sr-muted {
+    font-size: 0.84rem;
+    color: #9ca3af;
+    margin-top: 0.6rem;
+}
+
+/* LIST */
+.sr-contacts-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.sr-contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.75rem;
+    background: radial-gradient(circle at top right, rgba(248, 250, 252, 0.06), transparent 50%),
+        rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(55, 65, 81, 0.9);
+    transition: border-color 0.15s ease, transform 0.1s ease,
+        box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.sr-contact-item:hover {
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.85);
+}
+
+/* LEFT PART OF ITEM */
+.sr-contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sr-contact-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.sr-contact-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sr-contact-primary-pill {
+    font-size: 0.68rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #7dd3fc;
+    border: 1px solid #38bdf8;
+}
+
+.sr-contact-relation {
+    font-size: 0.78rem;
+    color: #9ca3af;
+}
+
+.sr-contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: #d1d5db;
+}
+
+/* RIGHT PART OF ITEM: BUTTONS */
+.sr-contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.sr-small-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid #4b5563;
+    background: transparent;
+    color: #e5e7eb;
+    cursor: pointer;
+    transition: background 0.12s ease, border-color 0.12s ease,
+        transform 0.08s ease;
+}
+
+.sr-small-btn:hover {
+    background: rgba(148, 163, 184, 0.25);
+    border-color: #9ca3af;
+    transform: translateY(-0.5px);
+}
+
+.sr-small-btn-danger {
+    border-color: #ef4444;
+    color: #fecaca;
+}
+
+.sr-small-btn-danger:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #f97373;
+}
+
+/* STATUS TEXTS */
+.sr-error-text {
+    font-size: 0.8rem;
+    color: #fca5a5;
+    margin-top: 0.2rem;
+}
+
+.sr-success-text {
+    font-size: 0.8rem;
+    color: #4ade80;
+    margin-top: 0.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .sr-page {
+        padding-top: 1.3rem;
+    }
+
+    .sr-page-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .sr-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sr-page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .sr-card {
+        padding: 1rem 1rem;
+    }
+}

@@ -1,0 +1,22 @@
+@import "./Login.css";
+
+.sr-auth-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.sr-auth-header p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    max-width: 26rem;
+}
+
+.sr-auth-field select {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.6rem;
+    border: 1px solid rgba(82, 82, 91, 0.9);
+    background: #020617;
+    color: #f9fafb;
+    font-size: 0.85rem;
+}
